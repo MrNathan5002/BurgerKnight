@@ -15,10 +15,14 @@ public class PlayerHealth : MonoBehaviour
     public float knockbackForceY = 3f;
     private Rigidbody2D rb;
 
+    private HealthUI healthUI;
+
     private void Start()
     {
         currentHealth = maxHealth;
         rb = GetComponent<Rigidbody2D>();
+        healthUI = FindObjectOfType<HealthUI>();
+        healthUI.UpdateHealth(currentHealth); // Set initial display
     }
 
     private void Update()
@@ -52,6 +56,11 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+        }
+
+        if (healthUI != null)
+        {
+            healthUI.UpdateHealth(currentHealth);
         }
     }
 
