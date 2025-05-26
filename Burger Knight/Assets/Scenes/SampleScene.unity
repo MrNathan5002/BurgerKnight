@@ -299,7 +299,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &835882869
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,20 +623,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> parent of 1def8b0 (Fat Boi added)
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 451603826}
-<<<<<<< HEAD
   - {fileID: 1619148737}
 <<<<<<< HEAD
   - {fileID: 835882872}
 =======
   - {fileID: 1929316932}
 >>>>>>> 6f407e8c8367b5e94f5c2a7df7157dbe732487d2
-=======
->>>>>>> parent of 1def8b0 (Fat Boi added)
