@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638838140943385577
+  platformSettingsDirtyTick: 638838831723845722
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,16 +121,76 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: BurgerKnight_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.15384616}
+    pivot: {x: 0.625, y: -0.15384616}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 30
+      width: 16
+      height: 13
+    spriteID: 3d164be1701e4f54eb536a75ac927c46
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 30}
+  - name: BurgerKnight_Frame_1
+    originalName: 
+    pivot: {x: 0.6666667, y: -0.15384616}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 4
+      width: 15
+      height: 13
+    spriteID: b7b40a8aafc45ab4b86766c71d603820
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 32, y: 4}
+  - name: BurgerKnight_Frame_2
+    originalName: 
+    pivot: {x: 0.64285713, y: -0.16666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 25
+      width: 14
+      height: 12
+    spriteID: b27c72229cc9d7947a5a1dc6a1b6745d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 32, y: 25}
+  - name: BurgerKnight_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.05555556}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 16
-      height: 13
-    spriteID: 863f5f80cfbc2c642a55b7b17f2e7846
+      width: 20
+      height: 18
+    spriteID: ed619f8f8b5b8184dbc05186dcbd664c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,46 +199,6 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: BurgerKnight_Frame_1
-    originalName: 
-    pivot: {x: 0.53333336, y: -0.15384616}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 25
-      width: 15
-      height: 13
-    spriteID: a8960734808015548bdc22a45edf47e7
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 25}
-  - name: BurgerKnight_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: -0.16666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 46
-      width: 14
-      height: 12
-    spriteID: 2bd43384d866637439653dc0b246df8d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 46}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -195,7 +215,7 @@ ScriptedImporter:
         y: 2
         width: 16
         height: 13
-      spriteId: 863f5f80cfbc2c642a55b7b17f2e7846
+      spriteId: 3d164be1701e4f54eb536a75ac927c46
     - name: BurgerKnight_Frame_1
       frameIndex: 1
       cellRect:
@@ -203,7 +223,7 @@ ScriptedImporter:
         y: 2
         width: 15
         height: 13
-      spriteId: a8960734808015548bdc22a45edf47e7
+      spriteId: b7b40a8aafc45ab4b86766c71d603820
     - name: BurgerKnight_Frame_2
       frameIndex: 2
       cellRect:
@@ -211,7 +231,15 @@ ScriptedImporter:
         y: 2
         width: 14
         height: 12
-      spriteId: 2bd43384d866637439653dc0b246df8d
+      spriteId: b27c72229cc9d7947a5a1dc6a1b6745d
+    - name: BurgerKnight_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 1
+        width: 20
+        height: 18
+      spriteId: ed619f8f8b5b8184dbc05186dcbd664c
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -265,4 +293,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 16}
+  canvasSize: {x: 20, y: 20}
