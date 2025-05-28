@@ -17,6 +17,11 @@ public class PlayerHealth : MonoBehaviour
 
     private HealthUI healthUI;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start()
     {
         currentHealth = maxHealth;
