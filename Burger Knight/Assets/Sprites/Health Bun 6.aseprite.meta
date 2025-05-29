@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 972893c0de7d2b24fba54fd3cb4484e5
+guid: 6f9b8f29669d2cc4db2d5ca64cb70e34
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638838797319286060
+  platformSettingsDirtyTick: 638840659695759342
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Health Bun_Frame_0
+  - name: Health Bun 6_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.16666667}
+    pivot: {x: 0.5, y: -0.15789473}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 12
-      height: 12
-    spriteID: 6e50edb30f7a5004ebe5cc6d9095f0c6
+      width: 19
+      height: 19
+    spriteID: c734fb129c197c343b4f920b56ccfd33
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,18 +139,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Health Bun_Frame_1
+  - name: Health Bun 6_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: -0.16666667}
+    pivot: {x: 0.5, y: -0.15789473}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 24
-      width: 12
-      height: 12
-    spriteID: d17adf4a9839bb94daffad58e2823f7e
+      y: 31
+      width: 19
+      height: 19
+    spriteID: e279c3e946f1e4d4e827ac6aa8884c9a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -158,32 +158,88 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 24}
+    uvTransform: {x: 4, y: 31}
+  - name: Health Bun 6_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.2352941}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 4
+      width: 17
+      height: 17
+    spriteID: 802321e6e7693b44e98ec78e05270eed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 4}
+  - name: Health Bun 6_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.2352941}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 29
+      width: 17
+      height: 17
+    spriteID: 35c42769dc32aad4e9975cba5780097c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 29}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 141435793
-    name: Health Bun
+    guid: 2131800007
+    name: Health Bun 6
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Health Bun_Frame_0
+    - name: Health Bun 6_Frame_0
       frameIndex: 0
       cellRect:
-        x: 2
-        y: 2
-        width: 12
-        height: 12
-      spriteId: 6e50edb30f7a5004ebe5cc6d9095f0c6
-    - name: Health Bun_Frame_1
+        x: 3
+        y: 3
+        width: 19
+        height: 19
+      spriteId: c734fb129c197c343b4f920b56ccfd33
+    - name: Health Bun 6_Frame_1
       frameIndex: 1
       cellRect:
-        x: 2
-        y: 2
-        width: 12
-        height: 12
-      spriteId: d17adf4a9839bb94daffad58e2823f7e
+        x: 3
+        y: 3
+        width: 19
+        height: 19
+      spriteId: e279c3e946f1e4d4e827ac6aa8884c9a
+    - name: Health Bun 6_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 4
+        y: 4
+        width: 17
+        height: 17
+      spriteId: 802321e6e7693b44e98ec78e05270eed
+    - name: Health Bun 6_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 4
+        y: 4
+        width: 17
+        height: 17
+      spriteId: 35c42769dc32aad4e9975cba5780097c
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -237,4 +293,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 16}
+  canvasSize: {x: 25, y: 25}
