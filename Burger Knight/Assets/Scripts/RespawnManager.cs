@@ -73,6 +73,13 @@ public class RespawnManager : MonoBehaviour
         if (player != null && spawnPoint != null)
         {
             player.transform.position = spawnPoint.transform.position;
+
+            // Restore health after respawn
+            PlayerHealth health = player.GetComponent<PlayerHealth>();
+            if (health != null)
+            {
+                health.RestoreFullHealth();
+            }
         }
         else
         {

@@ -366,6 +366,8 @@ MonoBehaviour:
   spawnMappings:
   - spawnID: Grill_Test
     sceneName: Room-3
+  - spawnID: Grill_Town
+    sceneName: Room-1
   currentSpawnID: 
 --- !u!1 &379658528
 GameObject:

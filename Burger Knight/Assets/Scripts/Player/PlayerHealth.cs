@@ -83,5 +83,6 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         isDead = false;
+        healthUI.UpdateHealth(currentHealth);
     }
 }
