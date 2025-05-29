@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
 
     private int currentHealth;
     private bool isInvincible;
-    private bool isDead = false;
+    public bool isDead = false;
     private float invincibilityTimer;
 
     public float knockbackForceX = 5f;
@@ -84,5 +84,10 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         isDead = false;
         healthUI.UpdateHealth(currentHealth);
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
     }
 }

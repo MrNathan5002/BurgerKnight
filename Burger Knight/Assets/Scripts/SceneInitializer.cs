@@ -11,10 +11,17 @@ public class SceneInitializer : MonoBehaviour
 
     private IEnumerator DelayedRespawn()
     {
-        // Wait just a moment to ensure everything in the scene (like spawn points) is initialized
+        //wait a moment so everything loads
         yield return new WaitForSeconds(0.1f);
 
-        // Now call the RespawnManager to move the player to the correct spawn point
-        RespawnManager.Instance.MovePlayerToSpawn();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            PlayerHealth health = player.GetComponent<PlayerHealth>();
+            if (health != null && health.isDead) // ONLY respawn if player actually died
+            {
+                RespawnManager.Instance.MovePlayerToSpawn();
+            }
+        }
     }
 }
