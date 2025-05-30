@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
 
     private int currentHealth;
     private bool isInvincible;
+    public bool isDead = false;
     private float invincibilityTimer;
 
     public float knockbackForceX = 5f;
@@ -16,6 +17,11 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody2D rb;
 
     private HealthUI healthUI;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
@@ -64,9 +70,24 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void Die()
+    private void Die()
     {
-        Debug.Log("Player Died!");
-        // Add death logic (respawn, restart, etc.) later
+        isDead = true;
+        Debug.Log("Player Died");
+
+        // Call the Respawn Manager to handle it
+        RespawnManager.Instance.RespawnPlayer();
+    }
+
+    public void RestoreFullHealth()
+    {
+        currentHealth = maxHealth;
+        isDead = false;
+        healthUI.UpdateHealth(currentHealth);
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
     }
 }
