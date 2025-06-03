@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpCutMultiplier = 0.5f;
     public float coyoteTime = 0.15f;
     public float jumpBufferTime = 0.1f;
+    [HideInInspector] public bool suppressJumpCut = false;
 
     [Header("Ground Detection")]
     public Transform groundCheck;
@@ -53,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // --- Variable Jump Height ---
-        if (!isJumpHeld && rb.velocity.y > 0f)
+        if (!isJumpHeld && rb.velocity.y > 0f && !suppressJumpCut)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * jumpCutMultiplier);
         }

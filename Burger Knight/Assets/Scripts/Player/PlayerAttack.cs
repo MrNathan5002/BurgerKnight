@@ -16,6 +16,13 @@ public class PlayerAttack : MonoBehaviour
     public int damage = 1;
     public float attackCooldown = 0.3f;
 
+    [Header("Pogo Settings")]
+    public float pogoForce = 15f;
+    public float pogoGravityScale = 0.5f;
+    public float pogoFloatTime = 0.2f;
+
+    private Coroutine pogoCoroutine;
+
     [Header("Knockback Settings")]
     public Vector2 enemyKnockbackForce = new Vector2(5f, 2f);
     public Vector2 playerRecoilForce = new Vector2(3f, 1.5f);
@@ -63,7 +70,8 @@ public class PlayerAttack : MonoBehaviour
             // Pogo if attacking downward
             if (IsAttackingDownward())
             {
-                playerMovement.Jump();
+                if (pogoCoroutine != null) StopCoroutine(pogoCoroutine);
+                pogoCoroutine = StartCoroutine(DoPogo());
             }
             // Recoil if attacking horizontally
             else if (!IsAttackingDownward())
@@ -91,6 +99,31 @@ public class PlayerAttack : MonoBehaviour
     bool IsAttackingDownward()
     {
         return Input.GetAxisRaw("Vertical") < -0.5f;
+    }
+
+    IEnumerator DoPogo()
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        PlayerMovement movement = GetComponent<PlayerMovement>();
+
+        // Cancel downward velocity
+        if (rb.velocity.y < 0) rb.velocity = new Vector2(rb.velocity.x, 0);
+
+        // Suppress jump-cut temporarily
+        movement.suppressJumpCut = true;
+
+        // Apply upward pogo force
+        rb.velocity = new Vector2(rb.velocity.x, pogoForce);
+
+        // Make gravity lighter temporarily
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = pogoGravityScale;
+
+        yield return new WaitForSeconds(pogoFloatTime);
+
+        // Restore gravity and jump-cut
+        rb.gravityScale = originalGravity;
+        movement.suppressJumpCut = false;
     }
 
     private void OnDrawGizmosSelected()
