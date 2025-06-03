@@ -85,9 +85,4 @@ public class PlayerHealth : MonoBehaviour
         isDead = false;
         healthUI.UpdateHealth(currentHealth);
     }
-
-    public bool IsDead()
-    {
-        return isDead;
-    }
 }

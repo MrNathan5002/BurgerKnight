@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [Header("Attack Points")]
+    public Transform attackPointRight;
+    public Transform attackPointLeft;
+    public Transform attackPointUp;
+    public Transform attackPointDown;
+
     [Header("Attack Settings")]
-    public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int damage = 1;
     public float attackCooldown = 0.3f;
-    public Vector2 knockbackForce = new Vector2(5f, 2f);
-    public Vector2 recoilForce = new Vector2(3f, 1.5f);
 
     private float lastAttackTime;
-    private Rigidbody2D rb;
+    private PlayerMovement playerMovement;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     void Update()
@@ -33,7 +36,9 @@ public class PlayerAttack : MonoBehaviour
     {
         lastAttackTime = Time.time;
 
-        // Detect enemies
+        Transform attackPoint = GetAttackPointFromInput();
+        if (attackPoint == null) return;
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         foreach (Collider2D enemy in hitEnemies)
@@ -41,26 +46,38 @@ public class PlayerAttack : MonoBehaviour
             // Deal damage
             enemy.GetComponent<EnemyHealth>()?.TakeDamage(damage);
 
-            // Apply knockback to enemy
-            Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
-            if (enemyRb != null)
+            // Pogo if attacking downward
+            if (IsAttackingDownward())
             {
-                Vector2 direction = (enemy.transform.position - transform.position).normalized;
-                enemyRb.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
+                playerMovement.Jump();
             }
-
-            // Recoil knockback to player
-            Vector2 recoilDir = (transform.position - enemy.transform.position).normalized;
-            rb.AddForce(recoilDir * recoilForce, ForceMode2D.Impulse);
         }
+    }
+
+    Transform GetAttackPointFromInput()
+    {
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+
+        if (y > 0.5f && attackPointUp != null) return attackPointUp;
+        if (y < -0.5f && attackPointDown != null) return attackPointDown;
+        if (x < 0 && attackPointLeft != null) return attackPointLeft;
+        if (x > 0 && attackPointRight != null) return attackPointRight;
+
+        // Default to right if no direction input
+        return attackPointRight;
+    }
+
+    bool IsAttackingDownward()
+    {
+        return Input.GetAxisRaw("Vertical") < -0.5f;
     }
 
     private void OnDrawGizmosSelected()
     {
-        if (attackPoint != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-        }
+        if (attackPointRight) Gizmos.DrawWireSphere(attackPointRight.position, attackRange);
+        if (attackPointLeft) Gizmos.DrawWireSphere(attackPointLeft.position, attackRange);
+        if (attackPointUp) Gizmos.DrawWireSphere(attackPointUp.position, attackRange);
+        if (attackPointDown) Gizmos.DrawWireSphere(attackPointDown.position, attackRange);
     }
 }
