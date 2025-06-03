@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638844981171038673
+  platformSettingsDirtyTick: 638845063255169201
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -130,7 +130,7 @@ ScriptedImporter:
       y: 28
       width: 8
       height: 8
-    spriteID: c22bf15af8b071d41860f5f9215d2468
+    spriteID: 45d6a95ab475a674ea327063c891093c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -150,7 +150,7 @@ ScriptedImporter:
       y: 44
       width: 7
       height: 7
-    spriteID: 73107b5add3b27d44a005d83e83817eb
+    spriteID: 1a553f45a8c085b41bddad2f23daad94
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -170,7 +170,7 @@ ScriptedImporter:
       y: 4
       width: 16
       height: 16
-    spriteID: 1f61628885c22654c9a877f707089dde
+    spriteID: 6e35c5db510b82a4d8dc8058284bd989
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -195,7 +195,7 @@ ScriptedImporter:
         y: 12
         width: 8
         height: 8
-      spriteId: c22bf15af8b071d41860f5f9215d2468
+      spriteId: 45d6a95ab475a674ea327063c891093c
     - name: Crumb_Frame_1
       frameIndex: 1
       cellRect:
@@ -203,7 +203,7 @@ ScriptedImporter:
         y: 13
         width: 7
         height: 7
-      spriteId: 73107b5add3b27d44a005d83e83817eb
+      spriteId: 1a553f45a8c085b41bddad2f23daad94
     - name: Crumb_Frame_2
       frameIndex: 2
       cellRect:
@@ -211,7 +211,7 @@ ScriptedImporter:
         y: 8
         width: 16
         height: 16
-      spriteId: 1f61628885c22654c9a877f707089dde
+      spriteId: 6e35c5db510b82a4d8dc8058284bd989
     linkedCells: []
     parentIndex: -1
   platformSettings:
