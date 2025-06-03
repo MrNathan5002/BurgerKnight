@@ -16,12 +16,18 @@ public class PlayerAttack : MonoBehaviour
     public int damage = 1;
     public float attackCooldown = 0.3f;
 
+    [Header("Knockback Settings")]
+    public Vector2 enemyKnockbackForce = new Vector2(5f, 2f);
+    public Vector2 playerRecoilForce = new Vector2(3f, 1.5f);
+
     private float lastAttackTime;
     private PlayerMovement playerMovement;
+    private Rigidbody2D rb;
 
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -46,10 +52,24 @@ public class PlayerAttack : MonoBehaviour
             // Deal damage
             enemy.GetComponent<EnemyHealth>()?.TakeDamage(damage);
 
+            // Knockback enemy
+            Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
+            if (enemyRb != null)
+            {
+                Vector2 knockDir = (enemy.transform.position - transform.position).normalized;
+                enemyRb.AddForce(knockDir * enemyKnockbackForce, ForceMode2D.Impulse);
+            }
+
             // Pogo if attacking downward
             if (IsAttackingDownward())
             {
                 playerMovement.Jump();
+            }
+            // Recoil if attacking horizontally
+            else if (!IsAttackingDownward())
+            {
+                Vector2 recoilDirection = (transform.position - attackPoint.position).normalized;
+                rb.AddForce(new Vector2(recoilDirection.x * playerRecoilForce.x, playerRecoilForce.y), ForceMode2D.Impulse);
             }
         }
     }

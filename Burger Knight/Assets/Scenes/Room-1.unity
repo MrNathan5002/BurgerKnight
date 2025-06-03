@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6889646819947899666, guid: 1ca69d0ac2440c241a98bc364be68e13, type: 3}
+  m_Sprite: {fileID: -4423951538546616849, guid: 1ca69d0ac2440c241a98bc364be68e13, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1814,6 +1814,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6643734619690887051, guid: 5cef0fac1f604bd40a5e8581360aa634, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7005370497888339295, guid: 5cef0fac1f604bd40a5e8581360aa634, type: 3}
       propertyPath: m_Name
       value: Squambler

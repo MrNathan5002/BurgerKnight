@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 4633063326117109431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.09, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -280,7 +280,7 @@ MonoBehaviour:
   coyoteTime: 0.15
   jumpBufferTime: 0.15
   groundCheck: {fileID: 9151304805455489799}
-  groundCheckRadius: 0.2
+  groundCheckRadius: 0.4
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -306,6 +306,8 @@ MonoBehaviour:
     m_Bits: 128
   damage: 1
   attackCooldown: 0.3
+  enemyKnockbackForce: {x: 5, y: 5}
+  playerRecoilForce: {x: 5, y: 1.5}
 --- !u!114 &8910741160733410601
 MonoBehaviour:
   m_ObjectHideFlags: 0
