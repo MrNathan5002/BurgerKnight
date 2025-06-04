@@ -279,6 +279,7 @@ MonoBehaviour:
   jumpCutMultiplier: 0.5
   coyoteTime: 0.15
   jumpBufferTime: 0.15
+  suppressJumpCut: 0
   groundCheck: {fileID: 9151304805455489799}
   groundCheckRadius: 0.4
   groundLayer:
@@ -306,6 +307,9 @@ MonoBehaviour:
     m_Bits: 128
   damage: 1
   attackCooldown: 0.3
+  pogoForce: 13
+  pogoGravityScale: 5
+  pogoFloatTime: 0.2
   enemyKnockbackForce: {x: 5, y: 5}
   playerRecoilForce: {x: 5, y: 1.5}
 --- !u!114 &8910741160733410601

@@ -109,8 +109,11 @@ public class PlayerAttack : MonoBehaviour
         // Cancel downward velocity
         if (rb.velocity.y < 0) rb.velocity = new Vector2(rb.velocity.x, 0);
 
-        // Suppress jump-cut temporarily
+        // Suppress jump-cut immediately
         movement.suppressJumpCut = true;
+
+        // Wait one frame to ensure Update() in PlayerMovement sees suppressJumpCut
+        yield return null;
 
         // Apply upward pogo force
         rb.velocity = new Vector2(rb.velocity.x, pogoForce);
