@@ -67,6 +67,10 @@ public class PlayerAttack : MonoBehaviour
                 enemyRb.AddForce(knockDir * enemyKnockbackForce, ForceMode2D.Impulse);
             }
 
+            // Grow Nearby Sesame Plants
+            Vector2 hitPosition = enemy.transform.position;
+            NotifySeedBunsOfHit(hitPosition);
+
             // Pogo if attacking downward
             if (IsAttackingDownward())
             {
@@ -127,6 +131,15 @@ public class PlayerAttack : MonoBehaviour
         // Restore gravity and jump-cut
         rb.gravityScale = originalGravity;
         movement.suppressJumpCut = false;
+    }
+
+    void NotifySeedBunsOfHit(Vector2 hitPosition)
+    {
+        SesamePlant[] buns = FindObjectsOfType<SesamePlant>();
+        foreach (SesamePlant bun in buns)
+        {
+            bun.RegisterHit(hitPosition);
+        }
     }
 
     private void OnDrawGizmosSelected()

@@ -85,4 +85,20 @@ public class PlayerHealth : MonoBehaviour
         isDead = false;
         healthUI.UpdateHealth(currentHealth);
     }
+
+    public void Heal(int amount)
+    {
+        if (isDead) return;
+
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+
+        Debug.Log("Player healed " + amount + " HP. Current HP: " + currentHealth);
+
+        if (healthUI != null)
+        {
+            healthUI.UpdateHealth(currentHealth);
+        }
+    }
 }
