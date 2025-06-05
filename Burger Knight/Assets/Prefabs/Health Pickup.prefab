@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healAmount: 1
   floatSpeed: 1
-  floatHeight: 0.25
+  floatHeight: 0
 --- !u!212 &496282204861055512
 SpriteRenderer:
   m_ObjectHideFlags: 0

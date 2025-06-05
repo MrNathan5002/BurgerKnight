@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitsToGrow: 5
-  growRadius: 5
+  growRadius: 10
   bunPickupPrefab: {fileID: 7516844306116684135, guid: b4aa4ad86826ad744bca0a977928da7a, type: 3}
   spawnPoint: {fileID: 8512732815565044368}
 --- !u!212 &2299958548233807178
