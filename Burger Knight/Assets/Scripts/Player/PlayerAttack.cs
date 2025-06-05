@@ -29,12 +29,14 @@ public class PlayerAttack : MonoBehaviour
 
     private float lastAttackTime;
     private PlayerMovement playerMovement;
+    private SeedPlanter seedPlanter;
     private Rigidbody2D rb;
 
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody2D>();
+        seedPlanter = GetComponentInChildren<SeedPlanter>();
     }
 
     void Update()
@@ -70,6 +72,12 @@ public class PlayerAttack : MonoBehaviour
             // Grow Nearby Sesame Plants
             Vector2 hitPosition = enemy.transform.position;
             NotifySeedBunsOfHit(hitPosition);
+
+            // Refill Seed Cooldown
+            if (seedPlanter != null)
+            {
+                seedPlanter.AddCooldownProgress(1.5f); // tweak value as needed
+            }
 
             // Pogo if attacking downward
             if (IsAttackingDownward())

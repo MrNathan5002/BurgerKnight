@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sesamePlantPrefab: {fileID: 1957414102066812526, guid: 17dcdb86e125d284595fe2e8e1cdd5cc, type: 3}
   plantPoint: {fileID: 757907370960875926}
+  maxCooldown: 10
+  cooldownSlider: {fileID: 0}
 --- !u!1 &3349496555952225599
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +224,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8189562612654576462, guid: af99646f168b6024a8bf837193f43374, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

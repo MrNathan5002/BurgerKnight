@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e38fffaad5e244459ab80a957c5b51e
+guid: f8a50d5d60a87e64587a9bdcf69ff88b
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638846704502665590
+  platformSettingsDirtyTick: 638846741186457110
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,58 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Bun Plant_Frame_0
+  - name: Grill
     originalName: 
-    pivot: {x: 0.49999997, y: -1}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 44
-      width: 4
-      height: 5
-    spriteID: a2f8ec17500caec479589e8a444a6cbc
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 44}
-  - name: Bun Plant_Frame_1
-    originalName: 
-    pivot: {x: 0.39999998, y: -0.8333334}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 30
-      width: 5
-      height: 6
-    spriteID: 9d4be82c93db75645a737cc315e48c00
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 30}
-  - name: Bun Plant_Frame_2
-    originalName: 
-    pivot: {x: 0.52631575, y: -0.2777778}
+    pivot: {x: 0.515625, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 19
-      height: 18
-    spriteID: 04b1e10d8e2542b40a63b920a36f0bfd
+      width: 32
+      height: 21
+    spriteID: d1f9c9a012624a14e9ba24f2dda1d1b3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -182,36 +142,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1371654766
-    name: Bun Plant
+    guid: 1512240726
+    name: Grill
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Bun Plant_Frame_0
+    - name: Grill
       frameIndex: 0
       cellRect:
-        x: 13
-        y: 5
-        width: 4
-        height: 5
-      spriteId: a2f8ec17500caec479589e8a444a6cbc
-    - name: Bun Plant_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 13
-        y: 5
-        width: 5
-        height: 6
-      spriteId: 9d4be82c93db75645a737cc315e48c00
-    - name: Bun Plant_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 5
-        y: 5
-        width: 19
-        height: 18
-      spriteId: 04b1e10d8e2542b40a63b920a36f0bfd
+        x: 1
+        y: 0
+        width: 32
+        height: 21
+      spriteId: d1f9c9a012624a14e9ba24f2dda1d1b3
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -265,4 +209,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 30, y: 30}
+  canvasSize: {x: 35, y: 35}
