@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 5715743628905045842}
   - component: {fileID: 3585124508315660479}
   - component: {fileID: 399073256344385583}
+  - component: {fileID: 7782843336909593291}
   m_Layer: 7
   m_Name: Squambler
   m_TagString: Untagged
@@ -278,3 +279,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &7782843336909593291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7005370497888339295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe0927153b821243b898d810535140a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crumbPrefab: {fileID: 2610337486021580642, guid: 0e2feaed2ee47a745a917c4d6ab818b5, type: 3}
+  crumbAmount: 3
+  spreadForce: 10

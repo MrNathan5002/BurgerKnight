@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpCutMultiplier = 0.5f;
     public float coyoteTime = 0.15f;
     public float jumpBufferTime = 0.1f;
+    [HideInInspector] public bool suppressJumpCut = false;
 
     [Header("Ground Detection")]
     public Transform groundCheck;
@@ -53,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // --- Variable Jump Height ---
-        if (!isJumpHeld && rb.velocity.y > 0f)
+        if (!isJumpHeld && rb.velocity.y > 0f && !suppressJumpCut)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * jumpCutMultiplier);
         }
@@ -67,9 +68,15 @@ public class PlayerMovement : MonoBehaviour
         float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : deceleration;
         float movement = Mathf.Pow(Mathf.Abs(speedDiff) * accelRate, velocityPower) * Mathf.Sign(speedDiff);
         rb.AddForce(Vector2.right * movement);
+
+        // --- Flip Player Sprite Based on Direction ---
+        if (moveInput != 0)
+        {
+            transform.localScale = new Vector3(Mathf.Sign(moveInput), 1, 1);
+        }
     }
 
-    void Jump()
+    public void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         lastTimeJumpPressed = 0;

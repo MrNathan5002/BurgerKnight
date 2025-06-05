@@ -21,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
     {
         // Replace with animation or effects later
         Debug.Log(name + " died.");
+        GetComponent<EnemyCrumbDropper>()?.DropCrumbs();
         Destroy(gameObject);
     }
 }
