@@ -36,6 +36,16 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void Start()
+    {
+        // Initialize camera to follow player movement
+        CameraController camFollow = Camera.main.GetComponent<CameraController>();
+        if (camFollow != null)
+        {
+            camFollow.target = transform;
+        }
+    }
+
     void Update()
     {
         // --- Input ---
