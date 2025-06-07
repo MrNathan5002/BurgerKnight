@@ -11,6 +11,9 @@ public class CameraController : MonoBehaviour
 
     public static CameraController Instance;
 
+    private PolygonCollider2D cameraBounds;
+    private Camera cam;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -21,6 +24,8 @@ public class CameraController : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        cam = GetComponent<Camera>();
     }
 
     void OnEnable()
@@ -36,6 +41,7 @@ public class CameraController : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         FindPlayer();
+        FindBounds();
     }
 
     void FindPlayer()
@@ -47,11 +53,49 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    void FindBounds()
+    {
+        GameObject boundsObj = GameObject.FindGameObjectWithTag("CameraBounds");
+        if (boundsObj != null)
+        {
+            cameraBounds = boundsObj.GetComponent<PolygonCollider2D>();
+        }
+        else
+        {
+            cameraBounds = null;
+        }
+    }
+
     void LateUpdate()
     {
         if (target == null) return;
 
         Vector3 targetPosition = new Vector3(target.position.x + offset.x, target.position.y + offset.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);
+        Vector3 desiredPosition = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);
+
+        if (cameraBounds != null)
+        {
+            desiredPosition = ClampToBounds(desiredPosition);
+        }
+
+        transform.position = desiredPosition;
+    }
+
+    Vector3 ClampToBounds(Vector3 desiredPosition)
+    {
+        float vertExtent = cam.orthographicSize;
+        float horzExtent = vertExtent * cam.aspect;
+
+        Bounds bounds = cameraBounds.bounds;
+
+        float minX = bounds.min.x + horzExtent;
+        float maxX = bounds.max.x - horzExtent;
+        float minY = bounds.min.y + vertExtent;
+        float maxY = bounds.max.y - vertExtent;
+
+        float clampedX = Mathf.Clamp(desiredPosition.x, minX, maxX);
+        float clampedY = Mathf.Clamp(desiredPosition.y, minY, maxY);
+
+        return new Vector3(clampedX, clampedY, desiredPosition.z);
     }
 }
