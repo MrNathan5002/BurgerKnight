@@ -104,6 +104,11 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
+    public bool IsGrounded()
+    {
+        return CheckGrounded();
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (groundCheck != null)

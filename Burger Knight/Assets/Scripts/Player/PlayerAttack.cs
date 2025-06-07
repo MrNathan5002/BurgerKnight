@@ -29,12 +29,14 @@ public class PlayerAttack : MonoBehaviour
 
     private float lastAttackTime;
     private PlayerMovement playerMovement;
+    private SeedPlanter seedPlanter;
     private Rigidbody2D rb;
 
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody2D>();
+        seedPlanter = GetComponentInChildren<SeedPlanter>();
     }
 
     void Update()
@@ -65,6 +67,16 @@ public class PlayerAttack : MonoBehaviour
             {
                 Vector2 knockDir = (enemy.transform.position - transform.position).normalized;
                 enemyRb.AddForce(knockDir * enemyKnockbackForce, ForceMode2D.Impulse);
+            }
+
+            // Grow Nearby Sesame Plants
+            Vector2 hitPosition = enemy.transform.position;
+            NotifySeedBunsOfHit(hitPosition);
+
+            // Refill Seed Cooldown
+            if (seedPlanter != null)
+            {
+                seedPlanter.AddCooldownProgress(1.5f); // tweak value as needed
             }
 
             // Pogo if attacking downward
@@ -127,6 +139,15 @@ public class PlayerAttack : MonoBehaviour
         // Restore gravity and jump-cut
         rb.gravityScale = originalGravity;
         movement.suppressJumpCut = false;
+    }
+
+    void NotifySeedBunsOfHit(Vector2 hitPosition)
+    {
+        SesamePlant[] buns = FindObjectsOfType<SesamePlant>();
+        foreach (SesamePlant bun in buns)
+        {
+            bun.RegisterHit(hitPosition);
+        }
     }
 
     private void OnDrawGizmosSelected()
