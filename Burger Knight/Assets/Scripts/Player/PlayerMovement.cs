@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
+    private Animator animator;
     private float moveInput;
     private bool isJumpPressed;
     private bool isJumpHeld;
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -68,6 +70,9 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * jumpCutMultiplier);
         }
+
+        // --- Walk Animation ---
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
 
     void FixedUpdate()

@@ -66,7 +66,7 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         if (target == null) return;
 

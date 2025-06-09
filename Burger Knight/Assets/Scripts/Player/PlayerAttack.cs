@@ -30,11 +30,13 @@ public class PlayerAttack : MonoBehaviour
     private float lastAttackTime;
     private PlayerMovement playerMovement;
     private Rigidbody2D rb;
+    private Animator animator;
 
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -42,6 +44,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && Time.time >= lastAttackTime + attackCooldown)
         {
             Attack();
+            animator.SetTrigger("Attack");
         }
     }
 
