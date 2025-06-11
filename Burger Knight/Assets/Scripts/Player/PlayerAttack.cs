@@ -82,6 +82,31 @@ public class PlayerAttack : MonoBehaviour
                 rb.AddForce(new Vector2(recoilDirection.x * playerRecoilForce.x, playerRecoilForce.y), ForceMode2D.Impulse);
             }
         }
+
+        Collider2D[] hitObjects = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
+
+        foreach (Collider2D obj in hitObjects)
+        {
+            // Breakable wall check
+            BreakableWall wall = obj.GetComponent<BreakableWall>();
+            if (wall != null)
+            {
+                wall.TakeDamage(1);
+
+                // Pogo if attacking downward and NOT grounded
+                if (IsAttackingDownward() && !IsGrounded())
+                {
+                    if (pogoCoroutine != null) StopCoroutine(pogoCoroutine);
+                    pogoCoroutine = StartCoroutine(DoPogo());
+                }
+                else
+                {
+                    // Horizontal recoil
+                    Vector2 recoilDirection = (transform.position - attackPoint.position).normalized;
+                    rb.AddForce(new Vector2(recoilDirection.x * playerRecoilForce.x, playerRecoilForce.y), ForceMode2D.Impulse);
+                }
+            }
+        }
     }
 
     Transform GetAttackPointFromInput()
