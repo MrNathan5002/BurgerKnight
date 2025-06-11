@@ -82,6 +82,18 @@ public class PlayerAttack : MonoBehaviour
                 rb.AddForce(new Vector2(recoilDirection.x * playerRecoilForce.x, playerRecoilForce.y), ForceMode2D.Impulse);
             }
         }
+
+        Collider2D[] hitObjects = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
+
+        foreach (Collider2D obj in hitObjects)
+        {
+            // Breakable wall check
+            BreakableWall wall = obj.GetComponent<BreakableWall>();
+            if (wall != null)
+            {
+                wall.Break();
+            }
+        }
     }
 
     Transform GetAttackPointFromInput()
