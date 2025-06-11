@@ -6,6 +6,18 @@ public class BreakableWall : MonoBehaviour
 {
     public GameObject breakEffect; // Optional: particle or debris effect
     public float destroyDelay = 0.1f;
+    public float wallHealth = 1;
+
+    public void TakeDamage(int amount)
+    {
+        wallHealth -= amount;
+        Debug.Log(name + " took " + amount + " damage.");
+
+        if (wallHealth <= 0)
+        {
+            Break();
+        }
+    }
 
     public void Break()
     {
