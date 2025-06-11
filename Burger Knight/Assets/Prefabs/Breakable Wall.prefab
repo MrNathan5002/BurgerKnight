@@ -143,5 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6781b6ad8d01a254ba1b4ba57826cbfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakEffect: {fileID: 0}
+  breakEffect: {fileID: 2971866615853223960, guid: b41ebb3a97b32bd4485d80f5cd06e021, type: 3}
   destroyDelay: 0.1
+  wallHealth: 1
