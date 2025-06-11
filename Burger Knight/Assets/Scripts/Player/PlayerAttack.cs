@@ -6,7 +6,6 @@ public class PlayerAttack : MonoBehaviour
 {
     [Header("Attack Points")]
     public Transform attackPointRight;
-    public Transform attackPointLeft;
     public Transform attackPointUp;
     public Transform attackPointDown;
 
@@ -30,11 +29,13 @@ public class PlayerAttack : MonoBehaviour
     private float lastAttackTime;
     private PlayerMovement playerMovement;
     private Rigidbody2D rb;
+    private Animator animator;
 
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -42,6 +43,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && Time.time >= lastAttackTime + attackCooldown)
         {
             Attack();
+            animator.SetTrigger("Attack");
         }
     }
 
@@ -67,15 +69,15 @@ public class PlayerAttack : MonoBehaviour
                 enemyRb.AddForce(knockDir * enemyKnockbackForce, ForceMode2D.Impulse);
             }
 
-            // Pogo if attacking downward
-            if (IsAttackingDownward())
+            // Pogo if attacking downward and NOT grounded
+            if (IsAttackingDownward() && !IsGrounded())
             {
                 if (pogoCoroutine != null) StopCoroutine(pogoCoroutine);
                 pogoCoroutine = StartCoroutine(DoPogo());
             }
-            // Recoil if attacking horizontally
-            else if (!IsAttackingDownward())
+            else
             {
+                // Horizontal recoil
                 Vector2 recoilDirection = (transform.position - attackPoint.position).normalized;
                 rb.AddForce(new Vector2(recoilDirection.x * playerRecoilForce.x, playerRecoilForce.y), ForceMode2D.Impulse);
             }
@@ -87,12 +89,15 @@ public class PlayerAttack : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        if (y > 0.5f && attackPointUp != null) return attackPointUp;
-        if (y < -0.5f && attackPointDown != null) return attackPointDown;
-        if (x < 0 && attackPointLeft != null) return attackPointLeft;
-        if (x > 0 && attackPointRight != null) return attackPointRight;
+        // Upward attack
+        if (y > 0.5f && attackPointUp != null)
+            return attackPointUp;
 
-        // Default to right if no direction input
+        // Downward attack only if airborne
+        if (y < -0.5f && !IsGrounded() && attackPointDown != null)
+            return attackPointDown;
+
+        // Horizontal attack — always use right point since player is flipped
         return attackPointRight;
     }
 
@@ -129,10 +134,14 @@ public class PlayerAttack : MonoBehaviour
         movement.suppressJumpCut = false;
     }
 
+    private bool IsGrounded()
+    {
+        return playerMovement != null && playerMovement.IsGrounded();
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (attackPointRight) Gizmos.DrawWireSphere(attackPointRight.position, attackRange);
-        if (attackPointLeft) Gizmos.DrawWireSphere(attackPointLeft.position, attackRange);
         if (attackPointUp) Gizmos.DrawWireSphere(attackPointUp.position, attackRange);
         if (attackPointDown) Gizmos.DrawWireSphere(attackPointDown.position, attackRange);
     }

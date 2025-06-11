@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a262a231faea4ed44a543f183eb060f8
+guid: 9dac7d6915b0aa44fb23121315f7d7b9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638838800800632545
+  platformSettingsDirtyTick: 638850141259687731
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,58 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Attack
+  - name: BurgerKnight-Walk_Frame_0
     originalName: 
-    pivot: {x: 0.5555556, y: -0.18181819}
+    pivot: {x: 0.47058824, y: -0.055555556}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 30
+      width: 17
+      height: 18
+    spriteID: 2bca2d6425be5f6469c286a3d5b8da75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 36, y: 30}
+  - name: BurgerKnight-Walk_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 30
+      width: 20
+      height: 18
+    spriteID: d7ee4ce4401ab774f85b4cf42b22e453
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 30}
+  - name: BurgerKnight-Walk_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.055555556}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 9
-      height: 11
-    spriteID: eab9b12880fe9034a9a01a91d8123f5b
+      width: 24
+      height: 18
+    spriteID: 65da4c095d765dc409cef78f022719ea
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,23 +179,67 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: BurgerKnight-Walk_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 4
+      width: 20
+      height: 18
+    spriteID: 0b99b4fe39d6bf04e8a4b84afa9a072b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 36, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1283678670
-    name: Attack
+    guid: 1165458396
+    name: BurgerKnight-Walk
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Attack
+    - name: BurgerKnight-Walk_Frame_0
       frameIndex: 0
       cellRect:
-        x: 3
-        y: 2
-        width: 9
-        height: 11
-      spriteId: eab9b12880fe9034a9a01a91d8123f5b
+        x: 24
+        y: 1
+        width: 17
+        height: 18
+      spriteId: 2bca2d6425be5f6469c286a3d5b8da75
+    - name: BurgerKnight-Walk_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 22
+        y: 0
+        width: 20
+        height: 18
+      spriteId: d7ee4ce4401ab774f85b4cf42b22e453
+    - name: BurgerKnight-Walk_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 20
+        y: 1
+        width: 24
+        height: 18
+      spriteId: 65da4c095d765dc409cef78f022719ea
+    - name: BurgerKnight-Walk_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 22
+        y: 0
+        width: 20
+        height: 18
+      spriteId: 0b99b4fe39d6bf04e8a4b84afa9a072b
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -209,4 +293,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 16}
+  canvasSize: {x: 64, y: 64}
