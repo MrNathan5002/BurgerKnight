@@ -10,6 +10,18 @@ public class PauseMenu : MonoBehaviour
 
     public bool isPaused; // Flag to track pause state
 
+    void Awake() // Make it persist between scenes
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
