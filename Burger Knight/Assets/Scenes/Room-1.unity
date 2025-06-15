@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 259520705}
   - component: {fileID: 259520704}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Menus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6049,7 +6049,7 @@ GameObject:
   - component: {fileID: 1702760655}
   - component: {fileID: 1702760654}
   m_Layer: 0
-  m_Name: test
+  m_Name: Pause Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -10,6 +10,8 @@ public class CurrencyManager : MonoBehaviour
     public int crumbCount = 0;
     public TMP_Text crumbText;
 
+    private const string CrumbKey = "CrumbCount";
+
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -19,6 +21,7 @@ public class CurrencyManager : MonoBehaviour
 
     private void Start()
     {
+        LoadCrumbs();
         UpdateCrumbUI();
     }
 
@@ -26,10 +29,30 @@ public class CurrencyManager : MonoBehaviour
     {
         crumbCount += amount;
         UpdateCrumbUI();
+        SaveCrumbs();
+    }
+
+    public void SpendCrumbs(int amount)
+    {
+        crumbCount = Mathf.Max(crumbCount - amount, 0);
+        UpdateCrumbUI();
+        SaveCrumbs();
     }
 
     private void UpdateCrumbUI()
     {
-        crumbText.text = crumbCount.ToString();
+        if (crumbText != null)
+            crumbText.text = crumbCount.ToString();
+    }
+
+    private void SaveCrumbs()
+    {
+        PlayerPrefs.SetInt(CrumbKey, crumbCount);
+        PlayerPrefs.Save();
+    }
+
+    private void LoadCrumbs()
+    {
+        crumbCount = PlayerPrefs.GetInt(CrumbKey, 0);
     }
 }
