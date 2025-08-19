@@ -695,10 +695,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnMappings:
-  - spawnID: Grill_Test
-    sceneName: Room-3
   - spawnID: Grill_Town
     sceneName: Room-1
+  - spawnID: Grill_R2
+    sceneName: Room-2
   currentSpawnID: 
 --- !u!1 &379658528
 GameObject:
