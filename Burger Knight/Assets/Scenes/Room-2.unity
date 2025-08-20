@@ -133,11 +133,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 238090274210787626, guid: 06da0d1ea9d505f4d8d76e06c19fcae5, type: 3}
       propertyPath: spawnPointName
-      value: Room-3 Left
+      value: Jungle Tree 1 Left
       objectReference: {fileID: 0}
     - target: {fileID: 238090274210787626, guid: 06da0d1ea9d505f4d8d76e06c19fcae5, type: 3}
       propertyPath: targetSceneName
-      value: Room-3
+      value: Jungle Tree 1
       objectReference: {fileID: 0}
     - target: {fileID: 5860322668867360698, guid: 06da0d1ea9d505f4d8d76e06c19fcae5, type: 3}
       propertyPath: m_Name

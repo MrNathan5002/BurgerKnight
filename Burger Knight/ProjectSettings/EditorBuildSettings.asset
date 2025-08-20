@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Room-2.unity
     guid: e3219ac5859def14c9c8ca72f7c6499d
   - enabled: 1
-    path: Assets/Scenes/Room-3.unity
+    path: Assets/Scenes/Jungle Tree 1.unity
     guid: 7162f5463964a81478fa90c14f94e591
+  - enabled: 1
+    path: Assets/Scenes/Jungle Tree 2.unity
+    guid: 73146e37c02a22143b17d606bef42430
   m_configObjects: {}
