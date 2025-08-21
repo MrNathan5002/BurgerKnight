@@ -278,7 +278,7 @@ MonoBehaviour:
   pogoForce: 13
   pogoGravityScale: 5
   pogoFloatTime: 0.2
-  enemyKnockbackForce: {x: 5, y: 5}
+  enemyKnockbackForce: {x: 15, y: 5}
   playerRecoilForce: {x: 10, y: 1.5}
 --- !u!114 &8910741160733410601
 MonoBehaviour:
